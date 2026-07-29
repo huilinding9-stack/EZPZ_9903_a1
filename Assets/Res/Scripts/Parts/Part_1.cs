@@ -7,6 +7,7 @@ public class Part_1 : MonoBehaviour
     public SpriteRenderer spriteRender;
     public Sprite[] sps;
     private int mCurIndex;
+    public static bool isEnter;
     void Start()
     {
         preBtn.onPrimaryInteract.AddListener(() =>
@@ -17,6 +18,7 @@ public class Part_1 : MonoBehaviour
                 mCurIndex = sps.Length - 1;
             }
             spriteRender.sprite = sps[mCurIndex];
+            isEnter = true;
         });
 
         nextBtn.onPrimaryInteract.AddListener(() =>
@@ -26,6 +28,7 @@ public class Part_1 : MonoBehaviour
             {
                 mCurIndex = 0;
             }
+            isEnter = true;
             spriteRender.sprite = sps[mCurIndex];
         });
     }
