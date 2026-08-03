@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Part_1 : MonoBehaviour
@@ -8,8 +9,13 @@ public class Part_1 : MonoBehaviour
     public Sprite[] sps;
     private int mCurIndex;
     public static bool isEnter;
+    public MeshRenderer alphaMat;
+    private bool mIsShow;
+
     void Start()
     {
+        alphaMat = transform.Find("AlphaModel").GetComponent<MeshRenderer>();
+
         preBtn.onPrimaryInteract.AddListener(() =>
         {
             mCurIndex--;
@@ -23,6 +29,12 @@ public class Part_1 : MonoBehaviour
 
         nextBtn.onPrimaryInteract.AddListener(() =>
         {
+            if (!mIsShow)
+            {
+                mIsShow = true;
+                StartCoroutine(IEShowDad());
+            }
+
             mCurIndex++;
             if (mCurIndex >= sps.Length)
             {
@@ -32,6 +44,20 @@ public class Part_1 : MonoBehaviour
             spriteRender.sprite = sps[mCurIndex];
         });
     }
+
+    private IEnumerator IEShowDad()
+    {
+        alphaMat.gameObject.SetActive(true);
+        alphaMat.material.color = new Color(1, 1, 1, 0);
+        float alpha = 0;
+        while (alpha < 0.5f)
+        {
+            alpha += Time.deltaTime * 0.3f;
+            alphaMat.material.color = new Color(1, 1, 1, alpha);
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
     void Update()
     {
 
