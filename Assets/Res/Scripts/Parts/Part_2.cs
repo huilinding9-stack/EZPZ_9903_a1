@@ -36,6 +36,7 @@ public class Part_2 : MonoBehaviour
 
     private IEnumerator IEShowDad()
     {
+        alphaMat.gameObject.SetActive(true);
         alphaMat.material.color = new Color(1, 1, 1, 0);
         float alpha = 0;
         while (alpha < 0.5f)
@@ -44,6 +45,8 @@ public class Part_2 : MonoBehaviour
             alphaMat.material.color = new Color(1, 1, 1, alpha);
             yield return new WaitForEndOfFrame();
         }
+        yield return new WaitForSeconds(25);
+        alphaMat.transform.GetComponent<Animator>().enabled = true;
     }
 
     void Update()

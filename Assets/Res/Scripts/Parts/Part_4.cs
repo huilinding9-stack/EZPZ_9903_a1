@@ -58,11 +58,15 @@ public class Part_4 : MonoBehaviour
                 transform.Find("Audios/6").gameObject.SetActive(true);
 
             }
-            else
+            else if(Part_1.isEnter && Part_2.isEnter && Part_3.isEnter)
             {
                 endText.text = "When the last memory emerged, everything finally fell into place.The voice of my father, the smile of my mother, and that once - again - present self.All of them have returned to my heart again.I finally retrieved all the memories related to this home.";
                 transform.Find("Audios/7").gameObject.SetActive(true);
-
+            }
+            else 
+            {
+                endText.text = "I stood in silence with empty hands. No fragments of memory surfaced. The past stayed hidden behind thick haze, and I retrieved none of the lost memories.";
+                transform.Find("Audios/8").gameObject.SetActive(true);
             }
         }
     }

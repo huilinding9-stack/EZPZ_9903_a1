@@ -56,6 +56,8 @@ public class Part_1 : MonoBehaviour
             alphaMat.material.color = new Color(1, 1, 1, alpha);
             yield return new WaitForEndOfFrame();
         }
+        yield return new WaitForSeconds(25);
+        alphaMat.transform.GetComponent<Animator>().enabled = true;
     }
 
     void Update()
