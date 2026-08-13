@@ -6,7 +6,7 @@ public class Tips : MonoBehaviour
     public GameObject nextTip;
     public LineRenderer lineRender;
     public Transform player;
-    public string tipContent;
+    //public string tipContent;
     public NavMeshPath navMeshPath;
    
 
@@ -46,10 +46,10 @@ public class Tips : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            if (tipContent != "")
-            {
-                Toast.Instance.ShowContent(tipContent);
-            }
+            //if (tipContent != "")
+            //{
+            //    Toast.Instance.ShowContent(tipContent);
+            //}
             GameObject.Destroy(gameObject);
             if (nextTip != null)
             {

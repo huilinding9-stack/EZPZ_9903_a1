@@ -2008,6 +2008,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EZPZ Button Interactable - Open URL Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8990616506083462551, guid: 21007548895049f42b0d22ee46fcf106, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
