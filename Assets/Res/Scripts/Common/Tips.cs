@@ -51,10 +51,10 @@ public class Tips : MonoBehaviour
             //    Toast.Instance.ShowContent(tipContent);
             //}
             GameObject.Destroy(gameObject);
-            if (nextTip != null)
-            {
-                nextTip.SetActive(true);
-            }
+               //if (nextTip != null)
+             //  {
+            //       nextTip.SetActive(true);
+            //   }
         }
     }
 }
